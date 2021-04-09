@@ -1,0 +1,68 @@
+table {
+    width: 95%;
+    margin: 5px auto;
+    border-collapse: collapse;
+}
+
+table thead tr {
+    border-bottom: 1px white solid;
+}
+
+table th:nth-child(1), table td:nth-child(1) {
+    width:  20%;
+}
+
+table th:nth-child(2), table td:nth-child(2) {
+    width:  30%;
+}
+
+table th:nth-child(3), table td:nth-child(3) {
+    width:  20%;
+}
+
+table th:nth-child(4), table td:nth-child(4) {
+    width:  30%;
+}
+
+table .table-row {
+    height: 55px;
+}
+
+table .body-row:hover {
+    background: #303040;
+}
+
+table td {
+    text-align: center;
+    border: none;
+}
+
+td > button {
+    padding: 3px;
+    margin: 0 2px;
+    font-family: 'Cairo';
+    color: green;
+    background: none;
+    outline: none;
+    border: 1px green solid;
+    cursor: pointer;
+}
+
+td > button:last-child {
+    color: red;
+    border-color: red;
+}
+
+table td.todo-done {
+    position: relative;
+}
+
+td.todo-done:before {
+    content: "";
+    width: 4px;
+    background: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
