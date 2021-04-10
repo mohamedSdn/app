@@ -1,13 +1,19 @@
 .App {
-  background-color: #282c34;
+  background-color:#18242b;
   color: white;
   width: 100%;
   min-height: 100vh;
-  padding: 50px 0 20px;
 }
 
-.app-header {
-  margin: 0 50px;
+header {
+  margin: 0 0 40px;
+  padding: 20px 60px;
+  background: #0a0808;
+  box-shadow: 0 0 8px 3px #080606;
+}
+
+header h2 {
+  margin: 0;
 }
 
 .container {
@@ -36,19 +42,23 @@
   outline: none;
   font-size: 14px;
   font-family: 'Cairo', sans-serif;
-  border-radius: 5px;
+  border-radius: 0px;
+  color: white;
   border: none;
+  border-bottom: 1px white solid;
+  background: #282d33;
 }
+
+/* .container .form input:not([type="button"]):focus {
+  box-shadow: 0 0 12px -2px black;
+  transition-duration: .1s;
+} */
 
 .container .form input[type="button"] {
   cursor: pointer;
-  background: white;
+  background: black;
+  border: none;
   font-weight: 600;
   width: 150px;
-}
-
-.container .form input[type="button"]:hover {
-  background: black;
-  color: white;
   transition-duration: .2s;
 }

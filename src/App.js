@@ -1,21 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import Todos from './components/todos'
+import Todos from './components/todo/todos'
+import AddForm from './components/add-form/addForm'
 
 function App() {
 
   const [idCounter, incrementId] = useState(1);
   const [todoslist, setTodos] = useState([]);
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [date, setDate] = useState("");
-
-  const addTodo = () => {
-    if(!title || !content || !date) {
-      alert("please fill in all fields");
-      return;
-    }
+  const addTodo = (title, content, date) => {
     let todo = {
       id: idCounter,
       title: title,
@@ -38,20 +31,15 @@ function App() {
 
   return (
     <div className="App">
-      <h2 className="app-header">Todo Manager</h2>
+      <header>
+        <h2>Todo Manager</h2>
+      </header>
       <div className="container">
         <div className="list">
           <Todos todolist = {todoslist} markAsDone= {markAsDone} deleteTodo = {deleteTodo}/>
         </div>
         <div className="form">
-          <h3>Add a todo</h3>
-          <input type="text" placeholder="set a title to your todo" 
-                 value={title} onChange={e => setTitle(e.target.value)}/>
-          <input type="text" placeholder="provide content here"
-                 value={content} onChange={e => setContent(e.target.value)}/>
-          <input type="date" placeholder="specify a deadline"
-                 value={date} onChange={e => setDate(e.target.value)}/>
-          <input type="button" value="Add todo" onClick={addTodo}/>
+          <AddForm addTodo = {addTodo}></AddForm>
         </div>
       </div>
     </div>
